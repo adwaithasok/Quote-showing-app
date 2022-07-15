@@ -40,7 +40,7 @@ class _todaysquotState extends State<todaysquot> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 60.0, left: 0),
-                      child: Text("todaysquot Quotes",
+                      child: Text("todays Quotes",
                           style: GoogleFonts.oswald(
                             textStyle:
                                 TextStyle(color: Colors.black, fontSize: 50),
