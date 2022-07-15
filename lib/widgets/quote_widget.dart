@@ -1,28 +1,39 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share_plus/share_plus.dart';
 
 class QuoteWidget extends StatelessWidget {
-  var quote = "";
-  var author = "";
-  var SwipeRight = "";
+  String? quote = "";
+  String? author = "";
+  String? SwipeRight = "";
   var bgColor;
 
   QuoteWidget({
     this.bgColor,
-    required this.quote,
-    required this.author,
-    required this.SwipeRight,
+     this.quote,
+     this.author,
+     this.SwipeRight,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25, right: 25, top: 300, bottom: 10),
-      color: bgColor,
+      decoration: BoxDecoration(
+        color: bgColor,
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: 6.0,
+          ),
+        ],
+      ),
+      margin: EdgeInsets.only(left: 25, right: 25, top: 200, bottom: 50),
       padding: EdgeInsets.only(left: 30, right: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Spacer(),
           Image.asset(
@@ -32,11 +43,11 @@ class QuoteWidget extends StatelessWidget {
             color: Colors.white,
           ),
           SizedBox(
-            height: 30,
+            height: 50,
           ),
           Text(
-            quote!=null?quote:"",
-            style: GoogleFonts.dancingScript(
+            quote ?? "",
+            style: GoogleFonts.kaushanScript(
               textStyle: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ),
@@ -44,7 +55,7 @@ class QuoteWidget extends StatelessWidget {
             height: 20,
           ),
           Text(
-            author!=null?author:"",
+             author ?? "",
             style: GoogleFonts.lato(
               textStyle: TextStyle(
                   color: Colors.white,
@@ -63,8 +74,9 @@ class QuoteWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(width: 1, color: Colors.white)),
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.white),
+                    ),
                     child: IconButton(
                         onPressed: () {},
                         icon: Icon(
@@ -79,7 +91,9 @@ class QuoteWidget extends StatelessWidget {
                         shape: BoxShape.circle,
                         border: Border.all(width: 1, color: Colors.white)),
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await Share.share(quote!);
+                        },
                         icon: Icon(
                           Icons.share,
                           color: Colors.white,
@@ -93,7 +107,7 @@ class QuoteWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 10.0, left: 200),
             child: Text(
-              SwipeRight!=null?SwipeRight:"",
+              SwipeRight ?? "",
               style: GoogleFonts.lato(
                 textStyle: TextStyle(
                     color: Colors.white,
