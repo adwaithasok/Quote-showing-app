@@ -36,8 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: any
   http: any
-  random_color: 1.0.5
   share_plus: ^4.0.10
+  firebase_auth: ^3.4.2
+  firebase_core: ^1.19.2
+  cloud_firestore: ^3.3.0
+  email_validator: ^2.0.1
 
 dev_dependencies:
   flutter_test:
