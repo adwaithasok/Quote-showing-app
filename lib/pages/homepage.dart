@@ -23,21 +23,28 @@ padding: const EdgeInsets.only(top: 100.0,left: 10,right: 10),
 
 
   children: <Widget>[
+    IconButton(onPressed: (){}, icon: Icon(Icons.logout,color: Colors.black,)),
     
                 
-       Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+    
           Container(
                       alignment: Alignment.bottomCenter,
-                      width: 160.0,
+                      width: 400.0,
                       height: 250,
                      
                        decoration: new BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 1.0), //(x,y)
+                        blurRadius: 6.0,
+                      ),
+                    ],
           image: new DecorationImage(
               image: new AssetImage("assets/random.jpg"),
-              fit: BoxFit.fill)),
+              fit: BoxFit.cover)),
                       child: InkWell(
                         onTap: () {
                           Navigator.push(context,
@@ -46,54 +53,40 @@ padding: const EdgeInsets.only(top: 100.0,left: 10,right: 10),
                       ),
                     ),
 
-                    SizedBox(width: 25,),
+                    SizedBox(height: 100,),
                     InkWell(
                       onTap: (){
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => todaysquot()));
                     },
                       child: Container(
+                        
                         decoration: new BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 1.0), //(x,y)
+                          blurRadius: 6.0,
+                        ),
+                      ],
                           image: new DecorationImage(
                               image: new AssetImage("assets/todayquote.jpg"),
-                              fit: BoxFit.fill)),
-                        width: 160.0,
-                        height: 250,
+                              fit: BoxFit.cover)),
+                        width: 400.0,
+                        height: 380,
                       ),
                     ),
     
-        ],
-      ),
+        
+      
     
     SizedBox(
       height: 50,
     ),
     
-       Row(
        
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-         
-           Container(
-                      width: 160.0,
-                      height: 250,
-                      color: Colors.green,
-                    ),
-    
-                    SizedBox(
-                      width: 25,
-                    ),
-                    Container(
-                      width: 160.0,
-                      height: 250,
-                      color: Colors.yellow,
-                    ),
-    
-         
-        ],
-      ),
-    
     
     
     // Container(

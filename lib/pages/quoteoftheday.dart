@@ -34,7 +34,9 @@ class _todaysquotState extends State<todaysquot> {
             future: getPost(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                if (snapshot.hasError) {}
+                if (snapshot.hasError) {
+                  return CircularProgressIndicator();
+                }
                 return Stack(
                   alignment: Alignment.topCenter,
                   children: [

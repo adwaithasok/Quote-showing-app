@@ -36,7 +36,8 @@ class _randomeState extends State<randome> {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasError) {
-                 
+                                   return CircularProgressIndicator();
+
                 }
                 return Stack(
                   alignment: Alignment.topCenter,
@@ -56,9 +57,10 @@ class _randomeState extends State<randome> {
                           
 
                           return QuoteWidget(
-                            quote: model["text"],
-                            author: model['author'],
+                            quote: model!["text" ],
+                            author: model!['author'],
                             SwipeRight: "swipe right",
+                           
                             bgColor: Color(0xFF03989e),
                           );
                         }),

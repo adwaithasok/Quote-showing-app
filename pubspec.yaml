@@ -37,6 +37,7 @@ dependencies:
   google_fonts: any
   http: any
   random_color: 1.0.5
+  share_plus: ^4.0.10
 
 dev_dependencies:
   flutter_test:
