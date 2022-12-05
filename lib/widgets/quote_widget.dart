@@ -38,8 +38,8 @@ class QuoteWidget extends StatelessWidget {
           Spacer(),
           Image.asset(
             "assets/quote.png",
-            height: 30,
-            width: 30,
+            height: 40,
+            width: 40,
             color: Colors.white,
           ),
           SizedBox(
